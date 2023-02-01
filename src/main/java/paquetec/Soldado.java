@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author eli
  */
-// clase soldado implementamos comparable para 
+//// no he escrito compentarios porque es la misma clase que el anterior ejercicio
 public class Soldado implements Comparable<Soldado>{
     private String nif;
     private String nombre;
@@ -71,7 +71,10 @@ public class Soldado implements Comparable<Soldado>{
 
     @Override
     public String toString() {
-        return "Soldado{" + "nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido=" + apellido + ", edad=" + edad + '}';
+        return """
+               Soldado %s
+                   Dni %s
+               """.formatted(nombre, nif);
     }
 
     @Override

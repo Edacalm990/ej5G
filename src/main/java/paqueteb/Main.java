@@ -5,7 +5,7 @@
 package paqueteb;
 
 /**
- *
+ * 
  * @author venganzaalchocolate
  */
 public class Main {
@@ -16,7 +16,7 @@ public class Main {
         // mostramos numeros d ela loteria y premios para comprobar que funciona correctamente
         System.out.println(loteria.toString());
         
-        // añadimos un numero y premio nostros para comprobar que el método comprobarDecimo funciona
+        // añadimos un numero y premio nosotros para comprobar que el método comprobarDecimo funciona
         loteria.meterDecimo("123456", 5);
         
         // comprobamos si un decimo esta premiado

@@ -13,6 +13,7 @@ import java.util.TreeSet;
  *
  * @author eli
  */
+// son los mismos comentarios que en el ejercicio anterior
 public class Ejercito{
     private SortedSet<Soldado> ejercito;
 
@@ -28,7 +29,14 @@ public class Ejercito{
 
     @Override
     public String toString() {
-        return "Ejercito{" + "ejercito=" + ejercito + '}';
+        String tmp="""
+                   Ejercito:
+                   """;
+        for (Soldado soldado : ejercito) {
+            tmp+=soldado.toString(); 
+            tmp+="\n";
+        };
+                return tmp;
     }
 
    

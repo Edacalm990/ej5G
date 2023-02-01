@@ -10,12 +10,6 @@ package paquetec;
  *
  * @author eli
  */
-/*
-PARTE C
-En una estructura map, asocia a cada objeto de tipo Ejercito un identificador único. 
-Se deben poder guardar Ejércitos con sus identificadores asociados, obtener un Ejercito según su nombre 
-y obtener todos los Ejércitos contenidos en la estructura map.
-*/
 public class Prueba {
     public static void main(String[] args) {
         Soldado soldadoUno= new Soldado("12345678A", "pepe", "pepe1", "pepe2", 25);
@@ -41,7 +35,7 @@ public class Prueba {
                            Añadir ejercitoUno -> %b
                            Añadir ejercitoDos -> %b
                            Añadir ejercitoTres con el mismo id que Dos -> %b
-                           Añadir ejercitoTres con un id que no existe -> %b
+                           Añadir ejercitoTres con un id que no existe, el 4 -> %b
                            """.formatted(tierra.addEjercito(ejercitoUno),
                                    tierra.addEjercito(ejercitoDos),
                                    tierra.addEjercito(ejercitoTres, 1),
@@ -49,12 +43,18 @@ public class Prueba {
         
                 
         // muestro los id de los ejercitos
-        System.out.println(tierra.mostrarEjercitos());
+        System.out.println(tierra.mostrarIdEjercitos());
         
         // muestro una lista de ejercitos 
         tierra.devolverEjercitos().forEach(System.out::println);
         
-
+        // muesto los ejercitos con toString
+        System.out.println(tierra.toString());
+        
+        System.out.println("-------- Ejercito con Id 0 que corresponde con el ejercitoUno ---------");
+        // busco un ejercito por su id y lo muestro para comprobar el resultado
+        System.out.println(tierra.buscarEjercito(0));
+        
         
     }
 }

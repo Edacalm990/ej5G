@@ -20,13 +20,32 @@ public class Ejercitos {
     private SortedMap<Integer, Ejercito> ejercitos;
     private int id;
 
-    // Inicialmente el traductor se crea vacío, sin registros
+    // inicializamos el id a 0
     public Ejercitos() {
         this.ejercitos = new TreeMap<>();
         this.id = 0;
     }
+
+    // Sobreescribimos el toString para que muestre una lista mas ordenada
+    @Override
+    public String toString() {
+        String tmp="LISTA DE EJERCITOS";
+        for (Map.Entry<Integer, Ejercito> entry : ejercitos.entrySet()) {
+            Integer id = entry.getKey();
+            Ejercito ejercito = entry.getValue();
+            tmp+="\n";
+            tmp+="""
+                 Ejercito con Id %s
+                 """.formatted(id);
+            tmp+=ejercito.toString();
+        }
+        return tmp;
+    }
     
-    public String mostrarEjercitos(){
+    
+    // metodo para mostrar solo los id de los ejercitos
+    // lo he creado solo para comprobación
+    public String mostrarIdEjercitos(){
         String tmp="";
         for (Integer key : ejercitos.keySet()) {
             tmp+="""
@@ -36,6 +55,8 @@ public class Ejercitos {
         return tmp;
     }
 
+    // método privado que comprueba que el id es único
+    // suma 1 al id si está repetido, así el contructor por defecto siempre añadirá un ejercito con un id único
     private boolean idEsUnico() {
         if (ejercitos.containsKey(id)) {
             id++;
@@ -45,6 +66,10 @@ public class Ejercitos {
         }
     }
 
+    /*añade un ejercito y se pone un id único, si el id que le corresponde ya está en el sistema
+    el método privado isIdUnico nos devuelve un false y añade un +1 y vuleve a comprobar si es único
+    hasta que el id sea único seguirá añadiendo +1 y comprobando, esto lo he hecho así porque en el
+    siguiente constructor permitimos que el usuario ponga un id*/
     public boolean addEjercito(Ejercito ejercito) {
         if (ejercito != null) {
             do {
@@ -59,6 +84,7 @@ public class Ejercitos {
         return false;
     }
 
+    // método que permite añadir un ejercito con su id
     public boolean addEjercito(Ejercito ejercito, int id) {
         if (ejercito != null && !ejercitos.containsKey(id)) {
             ejercitos.put(id, ejercito);

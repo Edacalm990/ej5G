@@ -24,7 +24,7 @@ public class Loteria {
         llenarLoteria();
     }
 
-    // método que pone 100 entradas 
+    // método que pone 1000 entradas 
     // key -> 6 numeros aleatorios (numeros de la loteria)
     // value - > premio entre 1 y 99.999
     private void llenarLoteria () {
@@ -55,10 +55,12 @@ public class Loteria {
         return tmp;
     }
     
+    // método extra solo para comprobar que comprobar decimo funciona
     public void meterDecimo (String numeroLoteria, int premio) {
     loteria.put(numeroLoteria, premio);
     }
     
+    // método que comprueba si un decimo está premiado
     public String comprobarDecimo(String numeroLoteria) {
         return (numeroLoteria!=null && loteria.containsKey(numeroLoteria)) 
                 ? loteria.get(numeroLoteria).toString() 

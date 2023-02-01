@@ -66,20 +66,26 @@ public class Traductor {
     
     // borrar entradas y  
     public boolean borrarEntrada (String key) {
-        return (traductor.remove(key)!=null) ? true : false;
+        if(key!=null){
+            traductor.remove(key.toLowerCase());
+            return true;
+        } else  {
+            return false;
+        }
+   
     }
     
     //modificar entradas ya creadas
     public boolean modificarEntrada (String palabraIngles, String palabraCastellano) {
-        return ((palabraIngles!=null)&&traductor.containsKey(palabraIngles)) 
-                        ? guardarEntrada(palabraIngles, palabraCastellano) 
+        return ((palabraIngles!=null)&&traductor.containsKey(palabraIngles.toLowerCase())) 
+                        ? guardarEntrada(palabraIngles.toLowerCase(), palabraCastellano.toLowerCase()) 
                         : false;
     }
     
     // realizar la traducción de una palabra dada.
     public String traducirPalabra(String palabraIngles) {
-        return (palabraIngles!=null&&traductor.containsKey(palabraIngles))
-                        ? traductor.get(palabraIngles)
+        return (palabraIngles!=null&&traductor.containsKey(palabraIngles.toLowerCase()))
+                        ? traductor.get(palabraIngles.toLowerCase())
                         : "no existe traducción" ;
     }
     

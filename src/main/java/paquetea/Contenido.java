@@ -22,6 +22,10 @@ public class Contenido {
         traductor.guardarEntrada("Fingers", "Dedos");
         traductor.guardarEntrada("Nose", "Nariz");
         traductor.guardarEntrada("Ankle", "Tobillo");
+        traductor.guardarEntrada("time", "tiempo");
+        traductor.guardarEntrada("purple", "violeta");
+        traductor.guardarEntrada("pink", "rosa");
+        traductor.guardarEntrada("blueberry", "arandano");
         
         // mostramos las palabras con su traduccion
         System.out.println(traductor.toString());
