@@ -4,6 +4,7 @@
  */
 package paquetea;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
@@ -51,12 +52,12 @@ public class Contenido {
                                    traductor.traducirPalabra("kjhwefkjulhgwfre")));
         
         // obtener lista de palabras inglesas
-        Set <String> palabrasInglesas= traductor.listaPalabrasInglesas();
+        ArrayList palabrasInglesas= traductor.listaPalabrasInglesas();
         System.out.println("--------Lista de palabras en Inglés--------");
         palabrasInglesas.forEach(System.out::println);
         
         // obtener lista de palabras en castellano
-        Collection palabrasCastellano= traductor.listaPalabrasCastellano();
+        ArrayList palabrasCastellano= traductor.listaPalabrasCastellano();
         System.out.println("--------Lista de palabras en Castellano--------");
         palabrasCastellano.forEach(System.out::println);
     }

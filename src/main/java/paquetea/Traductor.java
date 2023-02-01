@@ -41,8 +41,8 @@ public class Traductor {
     public String toString() {
         String tmp="Inglés -> Castellano" + "\n";
         for (Map.Entry<String, String> entrada : traductor.entrySet()) {
-            Object key = entrada.getKey();
-            Object val = entrada.getValue();
+            String key = entrada.getKey();
+            String val = entrada.getValue();
             tmp+= """
                   %s -> %s
                   """.formatted(key,val);
@@ -56,7 +56,7 @@ public class Traductor {
     // para ir guardando traducciones. 
     public boolean guardarEntrada (String palabraIngles, String palabraCastellano) {
         try {
-            traductor.put(palabraIngles, palabraCastellano);
+            traductor.put(palabraIngles.toLowerCase(), palabraCastellano.toLowerCase());
             return true;
         } catch (Exception e) {
             System.out.println(e);
@@ -84,12 +84,13 @@ public class Traductor {
     }
     
     // lista de palabras en Ingles
-    public Set listaPalabrasInglesas () {
-    return traductor.keySet();
+    public ArrayList listaPalabrasInglesas () {
+        ArrayList<String> array = new ArrayList<String>(traductor.keySet());
+        return array;
     }
     
     //lista de palabras en Castellano
-    public Collection listaPalabrasCastellano () {
-    return traductor.values();
+    public ArrayList listaPalabrasCastellano () {
+    return new ArrayList(traductor.values());
     }
 }
