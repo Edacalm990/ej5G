@@ -5,10 +5,19 @@
     <artifactId>ej5Gelisabet</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+        <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>com.mycompany.ej5gelisabet.Ej5Gelisabet</exec.mainClass>
     </properties>
+
 </project>
